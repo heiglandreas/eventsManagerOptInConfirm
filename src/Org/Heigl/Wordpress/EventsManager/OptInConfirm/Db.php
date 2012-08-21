@@ -73,8 +73,8 @@ class Db
      */
     public static function upgrade()
     {
-        $currentVersion 1.0.3
-        if ( $currentVersion 1.0.3
+        $currentVers = Wordpress::get_option('em_oic_db_version');
+        if ( $currentVers != self::VERSION) {
             $sql = file_get_contents(__DIR__ . '/share/sql/1.0.sql');
             $sql = str_replace('__TABLE__', self::getTableName(), $sql);
             require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
