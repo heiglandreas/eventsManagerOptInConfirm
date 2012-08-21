@@ -9,5 +9,5 @@ do
 done
 git commit -m "Bumped version number to $1"
 git tag -s "v$1" -m "Version $1"
-git archive master --prefix="eventsManagerOptInConfirm" --format zip > dist/em_oic-`git describe master`.zip
+git archive master --prefix="eventsManagerOptInConfirm/" --format zip > dist/em_oic-`git describe master`.zip
 
