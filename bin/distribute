@@ -3,7 +3,8 @@ set -e
 #
 grep --include=*.php --include=*.po -lr version . | while read i
 do
-    sed -i "" -Ei "s/version([ ]+).+/version\1$1/g" $i
+
+    sed -i "" -E "s/([vV]ersion[:]?[ ]+).+/\1$1/g" $i
     git add $i
 done
 git commit -m "Bumped version number to $1"
