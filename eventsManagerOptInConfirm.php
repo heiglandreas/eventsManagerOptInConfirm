@@ -32,7 +32,7 @@
  * @author    Andreas Heigl <andresa@heigl.org>
  * @copyright 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
- * @version 1.0.1
+ * @version   1.0.1
  * @since     17.08.2012
  */
 //namespace \Org\Heigl\Wordpress\EventsManager\OptInConfirm;
