@@ -187,13 +187,11 @@ class OptInConfirm
         }
         // Create a new EM_Booking-instance
         $booking = new \EM_Booking((int) $hash->getBooking());
-        error_log(print_r($booking,true));
         if ($booking->booking_status != 0) {
             $this->addMessage(Wordpress::get_option('em_oic_booking_already_confirmed'),'warn');
             return;
         }
-        $bookings = new \EM_Bookings(array($booking));
-        $bookings->approve($hash->getBooking());
+        $booking->approve();
         if ($booking->booking_status != 0) {
             $hash->setConfirmationDate(new \DateTime());
             $hash->store();
@@ -249,7 +247,6 @@ class OptInConfirm
             return $content;
         }
         $URI = Wordpress::get_bloginfo('wpurl') . '/optinconfirm/' . self::$hash->getHash();
-        error_log(print_r($URI,true));
         foreach ($content as $key => $value) {
             if ( ! isset($value['body'])) {
                 continue;

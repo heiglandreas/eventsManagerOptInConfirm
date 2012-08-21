@@ -130,7 +130,7 @@ class Db
             $sql[] = $key .'=\'' . $value . '\'';
         }
         $sql = 'UPDATE __TABLE__ SET ' . implode(', ', $sql) . ' WHERE id=\'' . $parameters['id'] . '\'';
-
+error_log($sql);
         return self::getWpDb()->query(str_replace('__TABLE__', self::getTableName(), $sql));
     }
 
