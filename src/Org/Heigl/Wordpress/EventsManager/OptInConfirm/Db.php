@@ -23,7 +23,7 @@
  * @author     Andreas Heigl <andreas@heigl.org>
  * @copyright  (c) 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license    http://www.opensource.org/license/MIT MIT-License
- * @version    1.0.2
+ * @version    1.0.3
  * @since      17.08.2012
  */
 
@@ -38,7 +38,7 @@ use \DateTime;
  * @author     Andreas Heigl <andreas@heigl.org>
  * @copyright  (c) 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license    http://www.opensource.org/license/MIT MIT-License
- * @version    1.0.2
+ * @version    1.0.3
  * @since      17.08.2012
  */
 class Db
@@ -73,8 +73,8 @@ class Db
      */
     public static function upgrade()
     {
-        $currentVersion 1.0.2
-        if ( $currentVersion 1.0.2
+        $currentVersion 1.0.3
+        if ( $currentVersion 1.0.3
             $sql = file_get_contents(__DIR__ . '/share/sql/1.0.sql');
             $sql = str_replace('__TABLE__', self::getTableName(), $sql);
             require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

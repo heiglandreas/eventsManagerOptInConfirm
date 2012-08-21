@@ -23,7 +23,7 @@
  * @author     Andreas Heigl <andreas@heigl.org>
  * @copyright  (c) 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license    http://www.opensource.org/license/MIT MIT-License
- * @version    1.0.2
+ * @version    1.0.3
  * @since      17.08.2012
  */
 
@@ -35,7 +35,7 @@ namespace Org\Heigl\Wordpress\EventsManager\OptInConfirm;
  * @author     Andreas Heigl <andreas@heigl.org>
  * @copyright  (c) 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license    http://www.opensource.org/license/MIT MIT-License
- * @version    1.0.2
+ * @version    1.0.3
  * @since      17.08.2012
  */
 class AdminUIController
