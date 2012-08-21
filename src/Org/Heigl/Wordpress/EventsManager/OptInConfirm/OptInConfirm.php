@@ -55,10 +55,21 @@ class OptInConfirm
         Wordpress::register_activation_hook('eventsManagerOptInConfirm/eventsManagerOptInConfirm.php', array(__CLASS__, 'setDefaults'));
         Wordpress::register_activation_hook('eventsManagerOptInConfirm/eventsManagerOptInConfirm.php', array(__NAMESPACE__ . '\\Db', 'upgrade' ));
         Wordpress::add_action('admin_menu', array(__CLASS__, 'adminMenu'));
+        Wordpress::add_filter('plugins_loaded', array(__CLASS__, 'pluginInit'));
         Wordpress::add_action( 'wp_router_generate_routes', array(__CLASS__, 'route'), 20 );
         Wordpress::add_action( 'shutdown', array(__CLASS__, 'freeOverdueBookings'), 20 );
         Wordpress::add_action( 'em_bookings_add_action', array(__CLASS__, 'createNewHash'), 20 );
         Wordpress::add_filter('em_booking_email_messages', array(__CLASS__, 'filter'));
+    }
+
+    /**
+     * Initialize the plugin
+     *
+     * @return void
+     */
+    public static function pluginInit()
+    {
+        Wordpress::load_plugin_textdomain('em_oic', false, basename(EM_OIC_BASEDIR) . '/locale');
     }
 
     /**
@@ -68,11 +79,14 @@ class OptInConfirm
      */
     public static function setDefaults()
     {
-        Wordpress::update_option('em_oic_hash_not_found',            'Hash could not be found in the database');
-        Wordpress::update_option('em_oic_hash_already_confirmed',    'Hash has already been confirmed');
-        Wordpress::update_option('em_oic_hash_no_longer_valid',      'Hash is no longer valid');
-        Wordpress::update_option('em_oic_booking_already_confirmed', 'Booking has already been confirmed');
-        Wordpress::update_option('em_oic_hash_lifetime',             'P2W');
+        $now = new DateTime();
+        Wordpress::add_option('em_oic_hash_not_found',            'Hash could not be found in the database');
+        Wordpress::add_option('em_oic_hash_already_confirmed',    'Hash has already been confirmed');
+        Wordpress::add_option('em_oic_hash_no_longer_valid',      'Hash is no longer valid');
+        Wordpress::add_option('em_oic_booking_already_confirmed', 'Booking has already been confirmed');
+        Wordpress::add_option('em_oic_booking_confirmed',         'Booking has been confirmed');
+        Wordpress::add_option('em_oic_hash_lifetime',             'P2W');
+        Wordpress::add_option('em_oic_last_gc_run',               $now->format('c'));
     }
 
     /**

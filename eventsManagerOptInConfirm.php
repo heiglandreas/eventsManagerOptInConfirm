@@ -36,7 +36,7 @@
  * @since     17.08.2012
  */
 //namespace \Org\Heigl\Wordpress\EventsManager\OptInConfirm;
-
+define('EM_OIC_BASEDIR', __DIR__);
 require_once __DIR__ . '/src/Org/Heigl/Util/Autoloader.php';
 \Org\Heigl\Util\Autoloader::registerAutoload();
 

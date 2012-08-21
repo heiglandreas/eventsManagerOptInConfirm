@@ -72,10 +72,15 @@ class AdminUIController
         em_options_input_text ( __( 'Booking has been confirmed', 'em_oic' ), 'em_oic_booking_confirmed', __('This message is displayed when the requested booking has been successfully confirmed', 'em_oic'));
         echo '</table>';
         echo '<p class="submit">';
-        echo '<input type="submit" id="dbem_options_submit" name="em_oic_save" value="' . __('Save Changes') . '" />';
+        echo '<input type="submit" id="dbem_options_submit" name="em_oic_save" value="' . __('Save Changes', 'em_oic') . '" />';
 		echo '<input type="hidden" name="_wpnonce" value="' . wp_create_nonce('em_oic') . '" />';
 	    echo '</p>';
         echo '</form>';
+        echo '<div><h2>' . __('Placeholder', 'em_oic') . '</h2>';
+        echo '<dl>';
+        echo '<dt>#_OPTIN_CONFIRM_URL</dt><dd>' . __('This will be replaced by the URL to the OptIn-Link', 'em_oic') . '</dd>';
+        echo '</dl>';
+        echo '</div>';
     }
 
     /**
