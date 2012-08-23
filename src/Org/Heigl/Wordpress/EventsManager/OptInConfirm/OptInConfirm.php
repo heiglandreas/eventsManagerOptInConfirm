@@ -108,9 +108,9 @@ class OptInConfirm
             return;
         }
         foreach ($invalids as $invalid) {
-            $inv = new EM_Booking($invalid);
-            $sql = $wpdb->prepare("DELETE FROM ". EM_BOOKINGS_TABLE . " WHERE booking_id=%d", $inv->booking_id);
-            $result = $wpdb->query( $sql );
+            $inv = new \EM_Booking((int) $invalid);
+            $sql = Db::getWpDb()->prepare("DELETE FROM ". EM_BOOKINGS_TABLE . " WHERE booking_id=%d", $inv->booking_id);
+            $result = Db::getWpDb()->query( $sql );
             if( $result !== false ){
                 //delete the tickets too
                 $inv->get_tickets_bookings()->delete();

@@ -160,9 +160,10 @@ error_log($sql);
      */
     public static function getInvalidBetween(\DateTime $start, \DateTime $end)
     {
-        $sql = "SELECT booking FROM __TABLE__ WHERE creation_date >= '%s' AND creation_date <= '%s'";
+        $sql = "SELECT booking FROM __TABLE__ WHERE creation_date >= '%s' AND creation_date <= '%s' AND confirmation_date IS NULL";
         $sql = sprintf($sql, $start->format('c'), $end->format('c'));
         $sql = str_Replace('__TABLE__', self::getTableName(), $sql);
+        error_log($sql);
         return self::getWpDb()->get_col($sql);
     }
 }
