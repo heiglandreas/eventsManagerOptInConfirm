@@ -94,8 +94,9 @@ class Hash
             $confirmationDate = '0000-00-00 00:00:00';
         }
         if ( ! $confirmationDate instanceof DateTime) {
-            $confirmationDate = new DateTime($confirmationDate);
+            $confirmationDate = new DateTime($confirmationDate, new \DateTimeZone('UTC'));
         }
+
         $this->confirmationDate = $confirmationDate;
         return $this;
     }
@@ -123,7 +124,7 @@ class Hash
     public function setCreationDate($creationDate)
     {
         if ( ! $creationDate instanceof DateTime) {
-            $creationDate = new DateTime($creationDate);
+            $creationDate = new DateTime($creationDate, new \DateTimeZone('UTC'));
         }
         $this->creationDate = $creationDate;
         return $this;
@@ -259,7 +260,7 @@ class Hash
     public function isValid()
     {
         $now = new DateTime();
-        if ( $now > $this->getCreationDate()->add(new \DateInterval(Wordpress::get_option('em_oic_hash_lifetime')))) {
+        if ( $now->sub(new \DateInterval(Wordpress::get_option('em_oic_hash_lifetime'))) > $this->getCreationDate()) {
             return false;
         }
         return true;

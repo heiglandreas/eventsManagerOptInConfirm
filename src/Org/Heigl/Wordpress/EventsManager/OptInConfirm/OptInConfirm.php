@@ -102,8 +102,9 @@ class OptInConfirm
             $lastRun = '0000-00-00 00:00:00';
         }
         $lastRun = new DateTime($lastRun);
+        $int = new \DateInterval(Wordpress::get_option('em_oic_hash_lifetime'));
         Wordpress::update_option('em_oic_last_gc_run', $now->format('c'));
-        $invalids = Db::getInvalidBetween($lastRun, $now);
+        $invalids = Db::getInvalidBetween($lastRun->sub($int), $now->sub($int));
         if (! $invalids) {
             return;
         }
@@ -114,7 +115,7 @@ class OptInConfirm
             if( $result !== false ){
                 //delete the tickets too
                 $inv->get_tickets_bookings()->delete();
-                $inv->previous_status = $this->booking_status;
+                $inv->previous_status = 0;
                 $inv->booking_status = false;
             }
         }

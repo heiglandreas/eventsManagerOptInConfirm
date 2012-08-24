@@ -98,6 +98,7 @@ class Db
                 continue;
             }
             if ($value instanceof \DateTime) {
+                $value->setTimezone(new \DateTimeZone('UTC'));
                 $value = $value->format('c');
             }
             $sql[] = $key .'=\'' . $value . '\'';
@@ -125,6 +126,7 @@ class Db
                 continue;
             }
             if ($value instanceof \DateTime) {
+                $value->setTimezone(new \DateTimeZone('UTC'));
                 $value = $value->format('c');
             }
             $sql[] = $key .'=\'' . $value . '\'';
@@ -144,9 +146,6 @@ error_log($sql);
     public static function load($hash)
     {
         $sql = 'SELECT * FROM __TABLE__ WHERE hash=\'' . $hash . '\'';
-
-        error_log($sql);
-
         return self::getWpDb()->get_row(str_replace('__TABLE__', self::getTableName(), $sql), ARRAY_A);
     }
 
@@ -160,10 +159,11 @@ error_log($sql);
      */
     public static function getInvalidBetween(\DateTime $start, \DateTime $end)
     {
+        $start->setTimezone(new \DateTimezone('UTC'));
+        $end->setTimezone(new \DateTimezone('UTC'));
         $sql = "SELECT booking FROM __TABLE__ WHERE creation_date >= '%s' AND creation_date <= '%s' AND confirmation_date IS NULL";
         $sql = sprintf($sql, $start->format('c'), $end->format('c'));
         $sql = str_Replace('__TABLE__', self::getTableName(), $sql);
-        error_log($sql);
         return self::getWpDb()->get_col($sql);
     }
 }
