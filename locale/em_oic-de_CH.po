@@ -2,18 +2,14 @@
 # This file is distributed under the same license as the eventsManagerOptInConfirm package.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.6
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/eventsManagerOptInConfirm\n"
-"POT-Creation-Date: 2012-08-21 11:54:36+00:00\n"
-"MIME-Version: 1.0.6
-"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: 1.0.7
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0.7
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2012-08-21 15:15+0100\n"
-"Last-Translator: Andreas Heigl <a.heigl@wdv.de>\n"
-"Language-Team: Andreas Heigl <andreas@heigl.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Language: de_DE\n"
-"X-Source-Language: C\n"
 
 #: src/Org/Heigl/Wordpress/EventsManager/OptInConfirm/AdminUIController.php:59
 msgid "Saved Options!"
@@ -89,7 +85,7 @@ msgstr "Wird ersetzt durch die URL zum Opt-In"
 
 #: src/Org/Heigl/Wordpress/EventsManager/OptInConfirm/OptInConfirm.php:169
 msgid "Confirm booking"
-msgstr "Buchunsbestätigung"
+msgstr "Buchungsbestätigung"
 
 #. Plugin Name of the plugin/theme
 msgid "eventsManagerOptInConfirm"

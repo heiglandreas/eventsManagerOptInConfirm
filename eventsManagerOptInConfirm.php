@@ -23,7 +23,7 @@
  * Plugin Name: eventsManagerOptInConfirm
  * Plugin URI: https://github.com/heiglandreas/eventsManagerOptInConfirm
  * Description: Opt-In Confirmation for Bookings in Events Manager
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: Andreas Heigl
  * Author URI: http://andreas.heigl.org
  * License: MIT
@@ -32,7 +32,7 @@
  * @author    Andreas Heigl <andresa@heigl.org>
  * @copyright 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
- * @version   1.0.6
+ * @version   1.0.7
  * @since     17.08.2012
  */
 //namespace \Org\Heigl\Wordpress\EventsManager\OptInConfirm;
