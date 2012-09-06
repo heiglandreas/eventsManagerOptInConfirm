@@ -56,9 +56,9 @@ class OptInConfirm
         Wordpress::register_activation_hook('eventsManagerOptInConfirm/eventsManagerOptInConfirm.php', array(__NAMESPACE__ . '\\Db', 'upgrade' ));
         Wordpress::add_action('admin_menu', array(__CLASS__, 'adminMenu'));
         Wordpress::add_filter('plugins_loaded', array(__CLASS__, 'pluginInit'));
-        Wordpress::add_action( 'wp_router_generate_routes', array(__CLASS__, 'route'), 20 );
-        Wordpress::add_action( 'shutdown', array(__CLASS__, 'freeOverdueBookings'), 20 );
-        Wordpress::add_action( 'em_bookings_add_action', array(__CLASS__, 'createNewHash'), 20 );
+        Wordpress::add_action('wp_router_generate_routes', array(__CLASS__, 'route'), 20 );
+        Wordpress::add_action('shutdown', array(__CLASS__, 'freeOverdueBookings'), 20 );
+        Wordpress::add_action('em_bookings_added', array(__CLASS__, 'createNewHash'), 20 );
         Wordpress::add_filter('em_booking_email_messages', array(__CLASS__, 'filter'));
     }
 
