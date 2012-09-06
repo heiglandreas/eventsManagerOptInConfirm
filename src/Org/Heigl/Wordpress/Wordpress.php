@@ -23,7 +23,7 @@
  * @author     Andreas Heigl <andreas@heigl.org>
  * @copyright  (c) 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license    http://www.opensource.org/license/MIT MIT-License
- * @version    1.0.7
+ * @version    1.0.8
  * @since      17.08.2012
  */
 
@@ -35,7 +35,7 @@ namespace Org\Heigl\Wordpress;
  * @author     Andreas Heigl <andreas@heigl.org>
  * @copyright  (c) 2012-2012 Andreas Heigl <andreas@heigl.org>
  * @license    http://www.opensource.org/license/MIT MIT-License
- * @version    1.0.7
+ * @version    1.0.8
  * @since      17.08.2012
  */
 class Wordpress

@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the eventsManagerOptInConfirm package.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.7
+"Project-Id-Version: 1.0.8
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andreas Heigl <a.heigl@wdv.de>\n"
 "Language-Team: mdv <mdv@wdv.de>\n"
-"MIME-Version: 1.0.7
+"MIME-Version: 1.0.8
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: German\n"
